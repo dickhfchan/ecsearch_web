@@ -31,6 +31,7 @@ def create_app(import_name, app_path, enabled_plugins, after_app_created=None, g
     config = get_config(app_dot_path, env)
     app.config.from_object(config)
     app.secret_key = app.config['SECRET_KEY']
+    app.static_url_path='/static'
     # custom json encoder
     from .plugins.improved_json_encoder import ImprovedJsonEncoder
     app.json_encoder = ImprovedJsonEncoder

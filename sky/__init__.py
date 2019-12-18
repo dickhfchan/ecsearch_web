@@ -1,7 +1,7 @@
 import functools
 from werkzeug.utils import import_string
 from werkzeug.local import LocalProxy
-from werkzeug import cached_property
+from werkzeug.utils import cached_property
 from flask import Flask, g, current_app, abort, Response, render_template, url_for, request, Blueprint
 from flask_login import current_user, login_user, logout_user, UserMixin
 from .utils import str_rand, md5, sha1, sha512, salt_hash, hash_pwd, pwd_hashed_compare, map_dicts, split_every
@@ -162,7 +162,7 @@ def _get_db():
                 :param sql: sql.
                 :return: iterable dict rows
             """
-            resultproxy = db.engine.execute('select * from comment_list LIMIT 0,8')
+            resultproxy = db.engine.execute(sql)
             def get_iterable_dict_rows():
                 for rowproxy in resultproxy:
                     row = {}

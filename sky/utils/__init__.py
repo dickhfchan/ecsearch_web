@@ -31,6 +31,17 @@ def map_dicts(dicts, key):
     for dc in dicts:
         r[dc[key]] = dc
     return r
+
+def split_every(iterable, n):
+    # split iterable to chunks
+    from itertools import islice
+    i = iter(iterable)
+    # must convert islice result to list, or can't know if ended
+    piece = list(islice(i, n))
+    while piece:
+        yield piece
+        piece = list(islice(i, n))
+
 # may has issue
 def walk_tree(obj, paths = None):
     if not paths:

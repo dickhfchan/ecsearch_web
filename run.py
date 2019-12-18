@@ -5,13 +5,14 @@ def create_app():
         # 'openapi': True,
         'proxy_fix': True,
         # 'cassandra': True,
+        'mysql': True,
         'cache': True,
         'schedule_task': True,
         'flask_login': True,
         'route': True,
     })
     return app
-
+    
 if __name__ == '__main__':
     app = create_app()
     with app.app_context():

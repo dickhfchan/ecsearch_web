@@ -4,7 +4,7 @@ from werkzeug.local import LocalProxy
 from werkzeug import cached_property
 from flask import Flask, g, current_app, abort, Response, render_template, url_for, request, Blueprint
 from flask_login import current_user, login_user, logout_user, UserMixin
-from .utils import str_rand, md5, sha1, sha512, salt_hash, hash_pwd, pwd_hashed_compare, map_dicts
+from .utils import str_rand, md5, sha1, sha512, salt_hash, hash_pwd, pwd_hashed_compare, map_dicts, split_every
 from .utils import make_decorator_with_arguments
 from .utils import override_classmethod, add_classmethod, override_instance_method, add_instance_method
 from .utils import resolve_dict_by_paths, resolve_obj_by_paths
@@ -51,14 +51,27 @@ def create_app(import_name, app_path, enabled_plugins, after_app_created=None, g
         from cassandra.cqlengine import connection
         connection.setup([app.config['DB_HOST']], app.config['DB_KEYSPACE'], lazy_connect=True)
         from .plugins import cassandra_cqlengine, cassandra_cqlengine_elastic
+    # mysql
+    if enabled_plugins.get('mysql'):
+        from flask_sqlalchemy import SQLAlchemy
+        global _db
+        # mysql://username:password@server:port/db?charset=utf8
+        user = app.config['DB_USER']
+        password = app.config['DB_PASS']
+        server = app.config['DB_HOST']
+        db_name = app.config['DB_NAME']
+        charset = app.config.get('DB_CHARSET', 'utf8')
+        port = app.config.get('DB_PORT', 3306)
+        app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql+pymysql://{user}:{password}@{server}:{port}/{db_name}?charset={charset}'
+        _db = db = SQLAlchemy(app)
     #
     with app.app_context():
         # cache
         # Check Configuring Flask-Cache section for more details
         if enabled_plugins.get('cache'):
             from flask_caching import Cache
-            global cache
-            cache = Cache(config={'CACHE_TYPE': 'simple'})
+            global _cache
+            _cache = cache = Cache(config={'CACHE_TYPE': 'simple'})
             #
             oldSet = cache.set
             def custom_cache_set(key, value, timeout = None):
@@ -135,7 +148,33 @@ def create_app(import_name, app_path, enabled_plugins, after_app_created=None, g
             return dict(setting=setting)
     return app
 
-cache = None # none if not init
+_cache = None
+def _get_cache():
+    return _cache
+cache = LocalProxy(_get_cache)
+
+_db = None
+def _get_db():
+    if _db:
+        def execute(sql):
+            """execute sql and return iterable dict rows.
+
+                :param sql: sql.
+                :return: iterable dict rows
+            """
+            resultproxy = db.engine.execute('select * from comment_list LIMIT 0,8')
+            def get_iterable_dict_rows():
+                for rowproxy in resultproxy:
+                    row = {}
+                    # rowproxy.items() returns an array like [(key0, value0), (key1, value1)]
+                    for column, value in rowproxy.items():
+                        # build up the dictionary
+                        row[column] = value
+                    yield row
+            return get_iterable_dict_rows()
+    _db.execute = execute
+    return _db
+db = LocalProxy(_get_db)
 
 def get_config(dir_dot_path, env):
     """Get config for specified dot path and env.

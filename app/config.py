@@ -8,6 +8,9 @@ class base:
     DB_HOST = '127.0.0.1'
     DB_USER = ''
     DB_PASS = ''
+    DB_CHARSET = 'utf8'
+    #
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
     #
     APP_NAME = 'Ecsearch'
     SECRET_KEY = 'ecsearch^m(ht4oyq6iph&j54mc^w#ag&pafsdnj%v^oyx9l1h0'
@@ -70,6 +73,8 @@ class base:
 class development(base):
     # DB_HOST = '127.0.0.1'
     # SERVER_NAME = 'localhost:8072'
+    #
+    SQLALCHEMY_TRACK_MODIFICATIONS = True
     #
     RECAPTCHA_DISABLED = True
     # stripe

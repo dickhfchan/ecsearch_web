@@ -1,0 +1,438 @@
+﻿.date{ font-size:0.75em; /*12/16*/   display:inline; }
+.weather{ font-size:0.75em; /*12/16*/   display:inline; float:left; *color:#333;}
+
+header{background: url(../images/header_bg.jpg) repeat-y #FFFFF left top; float:left; /* Old browsers */
+background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(240,240,240,1) 15%, rgba(255,255,255,1) 30%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(15%,rgba(240,240,240,1)), color-stop(30%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(240,240,240,1) 15%,rgba(255,255,255,1) 30%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(240,240,240,1) 15%,rgba(255,255,255,1) 30%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(240,240,240,1) 15%,rgba(255,255,255,1) 30%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(240,240,240,1) 15%,rgba(255,255,255,1) 30%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */ /*height:50px;*/ *background: url(../images/header_bg.jpg) repeat-y #FFFFF left top; float:left;}
+
+header h1{ padding:0; margin:0}
+
+header ul{ list-style:none; padding:0; margin:0;  text-align:center;}
+.logo_wrapper { width:100%; display:block; float:left;}
+/*#mingpaonews_logo{width:23.09236%; *width:230px; margin: 0 auto; padding:0; display:block; }*/
+#mingpaonews_logo{width:23.09236%/*230px/996px*/; *width:230px; margin: 0 auto; padding:0; display:block; float:left; }
+#mingpaonews_logo img{width:100%;}
+/* 20140318*/.grey_dot { border-bottom:1px #ccc dotted; }
+/*.otherinfo { left: 0; margin: 0 auto; position: absolute; text-align: left; bottom: 0em; width:40%; height:4.5em; }*/
+.otherinfo {float:left;margin:0 auto;text-align:left;width:37%;height:4.7em;}
+.otherinfo .weather{ /*20140304 margin:2em 0 0 0;*/ margin:1em 0 0 0.4em; width:80%; position:relative; *width:300px; clear:left; } 
+.otherinfo .weather .alert_icon{  position:absolute; top:-10px; z-index:99; left:15%; *left: 50px;}
+.otherinfo .weather .alert_icon img{ float: left; height: 32px; margin-right: 0.5em; }
+.otherinfo .weather span.tem{  float:left;  display:inline; width:50%; text-align:left;} 
+.otherinfo .date{ width:18em; margin:1.7em 0 0.5em 0.5%; }
+.otherinfo2 {text-align:left;width:30%;height:18px;}
+.otherinfo2 .back { font-size:0.8125em; margin-left:0.25em; }
+.otherinfo3 {width:32%;z-index:9000;float:right;height:4.7em;}
+.otherinfo3 .top_absolute { width:100%; z-index:9000;}
+
+header .block {position: relative; margin: 0 auto;padding: 0em 1.25em; max-width: 60em; display: none\9;}
+
+#top {z-index: 9000;width:100%;}
+#top .block-title {margin: 0;font-size: 1.875em;line-height: 1.2em;   text-align: center; white-space: nowrap; }
+#top .nav-btn { position: absolute; top: 1em;left: 1.2em; z-index:999; display:block; *display:none;}
+
+/**** new header ****/
+.desktopheader { display:block; }
+.mobileheader { display:none; }
+
+.close-btn {
+ display: block;
+  width: 2.625em;
+  height: 2.25em;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: #333333 /*url(../images/close-btn.svg)*/ left center no-repeat;
+  background-size: 1.875em 1.875em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: 100%;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+}
+.no-svg .close-btn {background-image: url(../fonts/5e647caf5f8f41be8e86d68462136499.woff);}
+.nav-btn:hover, .nav-btn:focus {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+/**********************************************************************************************************************/
+/*****************/	
+#mainportal { border-bottom:1px solid #CCC; float:left; width:100%; min-width: 996px; /*margin-left:-5px;*/ background:#FFF; height:40px; box-sizing: content-box;}
+
+#portal_menu { z-index: 200; position: relative;  width:95%;  float:left; height:40px;}
+#portal_menu #menu { width:72%;  float:left;  /*background: url(../images/top_portalmenu_bk2.jpg) repeat-x transparent;*/ height:42px;}
+#mainportal .mingpaologo_wrapper { /*background: url(../images/top_portalmenu_left.png) no-repeat scroll right top transparent;*/ float: left; height:40px; /* 20141124 width: 9.39623%;*/ border-left:1px solid #CCC; border-right:1px solid #CCC; }
+#mainportal .mingpaologo_wrapper img {/* 20141124   margin: 0.5em auto; width: 80%; */}
+#portal_menu .close-btn { display: none;}
+#portal_menu .block-title { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px;
+overflow: hidden;padding: 0; position: absolute;width: 1px;}
+#portal_menu .block {z-index: 2; position: relative; padding:0;}
+#portal_menu ul {*zoom: 1; display: block;  margin:0; padding:0; list-style:none;}
+#portal_menu ul:before, #portal_menu ul:after { content: "";display: table;}
+#portal_menu ul:after {clear: both;}
+#portal_menu li {display: block; /* 20141126 */ border-right:1px solid #ccc; height:40px}
+#portal_menu li a { display: block; font-size: 0.875em; line-height: 1.28571em; outline: none;}
+#portal_menu li a:focus, #portal_menu li a:hover {/* 20141126 */height:36px;}
+#portal_menu li.is-active a {  }
+#portal_menu ul li{ margin:0; padding:0; list-style:none;cursor:pointer; float:left;}
+#portal_menu li a{ padding: 1em 0.6em 0.4em ;}
+
+/* We apply the background hover color when user hover the mouse over of the li component */
+/* for IE < 9 we using class .iehover */
+#portal_menu ul li:hover, #portal_menu ul li#current,
+#portal_menu ul li.iehover{ position:relative;  border-top:4px solid #339900; transition: all 0.3s ease-out 0s; /* 20141126 */height:36px; display:inline-block;}
+
+/* We apply the link style */
+#portal_menu ul li a{color:#339900; display:inline-block; text-decoration:none;font-size:0.8125em; }
+
+/**** SECOND LEVEL MENU ****/
+/* We make the position to absolute for flyout menu and hidden the ul until the user hover the parent li item */
+#portal_menu ul li ul{  position:absolute;  display:none; z-index:2001;}
+
+/* When user has hovered the li item, we show the ul list by applying display:block, note: 150px is the individual menu width.  */
+/* for IE < 9 we using class .iehover */
+#portal_menu ul li:hover ul, 
+#portal_menu ul li.iehover ul{left:-35px; display:block; top:35px; position:absolute;}
+/* we apply different background color to 2nd level menu items*/
+#portal_menu ul li ul li{ background-color:#cae25a; width:100%; border-bottom:solid 1px white;  top:0em; font-size:95%;}
+
+/* We change the background color for the level 2 submenu when hovering the menu */
+/* for IE < 9 we using class .iehover */
+#portal_menu ul li:hover ul li:hover,
+#portal_menu ul li.iehover ul li.iehover{ background-color:#B3D43B;}
+
+/* We style the color of level 2 links */
+#portal_menu ul li ul li a{ color:#454444; display:inline-block; width:120px;}
+
+/******** topmenu subscribe **********/
+
+/* We remove the margin, padding, and list style of UL and LI components */
+
+#subscribe_menu { width:28%; float:right; height:40px; /*background: url(../images/top_portalmenu_right.png) no-repeat;*/ }
+
+#subscribe_menu ul, #subscribe_menu ul li{ margin:0; padding:0; list-style:none; float:right; /* 20141126 */ border-left:1px solid #ccc; border-right:0px;}
+#subscribe_menu ul { /* 20141126 */ background:#eee;  }
+#subscribe_menu ul li{ cursor:pointer; float:left; /*background: url(../images/top_portalmenu_line.gif) no-repeat center right;*/}
+/*#subscribe_menu ul li:last-child{ background:none;}*/
+#subscribe_menu ul li:last-child{background-image:none;}
+
+#subscribe_menu li a{padding: 0.8em 0.75em;}
+
+/* for IE < 9 we using class .iehover */
+#subscribel_menu ul li:hover,
+#subscribe_menu ul li.iehover{ position:relative;  border-top:4px solid #999; transition: all 0.3s ease-out 0s;}
+
+/* We apply the link style */
+#subscribe_menu ul li a{
+    color:#666666;
+    display:inline-block;
+    text-decoration:none;
+	font-size:0.8125em; 
+}
+
+/**** SECOND LEVEL MENU ****/
+/*user hover the parent li item */
+#subscribe_menu ul li ul{  position:absolute;  display:none; z-index:2001;}
+
+
+/* for IE < 9 we using class .iehover */
+#subscribe_menu ul li:hover ul, 
+#subscribe_menu ul li.iehover ul{
+    left:-58px;
+    display:block;
+	top:35px;
+	position:absolute;
+}
+
+/* we apply different background color to 2nd level menu items*/
+#subscribe_menu ul li ul li{ background-color:#EBEBEB; width:100%;border-bottom:solid 1px white; font-size:95%; background-image:none;}
+
+/* for IE < 9 we using class .iehover */
+#subscribe_menu ul li:hover ul li:hover,
+#subscribe_menu ul li.iehover ul li.iehover{ background-color:#E1E1E1;}
+
+/* We style the color of level 2 links */
+#subscribe_menu ul li ul li a{ color:#454444; display:inline-block; width:120px;}
+
+/* Clear float */
+.clear{ clear:both;}
+
+/*======================================================================================*/
+/*=============================== header responsive ===================================*/
+/*====================== nav & mega menu & off canvas menu =============================*/
+/*=======================================================================================*/
+/*1003 - 800.16 */
+@media screen and (min-width:50.01em) and (max-width:63em) {
+#bkg_wrapper { background:#FFF;}
+#outer_wrapper {width:996px; position: relative; text-align: left; margin:0 auto;}
+
+.row{ width:100%; display: block;float:left;}
+header .member_all{ display:none;} /*85/800*/
+#mingpaonews_logo{margin: 0 auto; padding:0; display:block; }
+#mingpaonews_logo img{width:100%;}
+.quicksearch_wrapper #mb_portal_title{ display:none}
+
+/*.news_portalmenu .navigation li a {padding: 8px  1.425em;}
+.news_submenu .navigation li a {padding: 6px 0.67em ;   }*/
+
+}
+
+/* NAV 800 - 160*/
+/*816*/
+@media screen and (min-width: 40.01em) {
+  #top .nav-btn {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+}
+
+
+@media only screen and (min-width : 10em) and (max-width: 62.5em) {
+	#mainportal { width:997px; }
+
+@media only screen and (min-width : 10em) and (max-width: 40em) {
+
+#bkg_wrapper { background-color:#FFF; background-image:none;}
+#maincontent_container {width: 100%; clear: both; position:relative; display:block; }
+#outer_wrapper {width:100%; position: relative;text-align: left; margin:0 auto; display:block;}
+#maincontent{width:97%; min-height: 600px;}
+
+header { background:none;}
+
+header .member_all{  float:right; margin:0.8em 0.502%; display:block; padding:1.8% 2.5%;}
+header .member_login{display:none;} 
+header .member_reg{ display:none;}
+header .member_sub{ display:none;}
+.otherinfo { position:inherit; width:70%; border:none; float:left; height:1em; margin-bottom:2px;}
+.otherinfo .date{ width:100%; margin:3px auto; text-align:left;}
+
+.otherinfo2 {  border:none; float:right; position:inherit; width:30%; bottom:0; margin-bottom:2px; }
+.otherinfo2 .back { float:right; font-size:0.8125em; margin-left:0.25em; }
+
+.otherinfo .weather{ top:-10em; width:99%; display:block; }
+.otherinfo .weather .alert_icon{  position:absolute; top:-11px; z-index:99; right:14%;}
+.otherinfo .weather .alert_icon img{ float: right; height: 32px; margin-right: 0.3em; }
+.otherinfo .weather span.tem { margin:0 0.5em 0 0; text-align:right; float:right;}
+
+#mingpaonews_logo {display: block; height: 70px; margin: 1em auto; padding: 0; width: 180px; }
+#mingpaonews_logo img{width:100%; }
+.grey_dot { border-bottom:hidden; }
+
+.date{ font-size:0.75em; }
+
+/**** new header ****/
+.desktopheader { display:none; }
+.mobileheader { display:block; }
+
+/******************** nav **********************/
+.newsmenu_wrapper { width:100%; position:absolute;}
+.navheader{padding:0; margin:0;  position: absolute; z-index: 999; width:100%;}
+.portal_navheader {padding:0; margin:0; top:14%; position: absolute; z-index: 999; width:100%; /*background: #62A534;*/}
+.news_submenu{ background:none;}
+.news_header .span_4_of_12{ display:none;}
+.news_portalmenu .slide-trigger{ background-image:none;}
+.news_portalmenu .slide-trigger h3 { padding: 0.3em 1em 0.6em 0em; }
+.news_portalmenu .slide-trigger img{ max-width: 100%; vertical-align: middle;}
+.news_portalmenu{ background:none;}
+.news_portalmenu .navigation li { border:none;border-bottom: 1px solid rgba(255, 255, 255, 0.1); border-right: 1px solid rgba(255, 255, 255, 0.1); margin-top: 0;}
+.news_portalmenu .navigation li a { width: 100%; padding: 0.7em 0; font-size: 1.125em; display: block;text-align: center;}
+.news_portalmenu .navigation li a:hover, .news_portalmenu .navigation li a:focus { background: none;}
+.news_portalmenu .navigation li a#current { background: none; background-color: #266C23;}
+
+.portal_menu_wrapper {padding-top:0; margin-top:0;}
+
+.news_submenu .navigation li a#current, .news_submenu .navigation li a:hover { background:none;}
+.news_portalmenu { width:27%;}
+.news_submenu{ width:30.8%;}
+.news_submenu .navigation { width:73%;}
+
+header .block {padding: 1em 1.25em 1.5em;}
+#top .nav-btn { position: absolute;top:0em; left: 0em;}
+.portal_menu_wrapper { width:100%;}
+.dl-menuwrapper {width: 100%;top:0em;left:0em;position: absolute;}
+
+#mainportal { border-bottom:1px solid #CCC; float:left; width:100%; background:#FFF; height:40px; }
+#mainportal { background:none; float:none; height:inherit; margin: inherit; width:100%; border-bottom:none }
+#mainportal .mingpaologo_wrapper {display:none;}
+#mainportal .mingpaologo_wrapper img {display:none;}
+#portal_menu {position: absolute; top: 0; padding-top: 0em; overflow:hidden;}
+#portal_menu #menu{width:100%; float:left; background:none; height:inherit;}
+#portal_menu:not(:target) { z-index: 1; height: 0; }
+#portal_menu:target .close-btn { display: block;}
+#portal_menu .close-btn { position: absolute; top: -3.75em; left: 1.875em;}
+#portal_menu .block { position: relative; padding: 0; }
+#portal_menu li { position: relative; width:100%; border-top: 1px solid rgba(255, 255, 255, 0.1); height:inherit;}
+#portal_menu li a {}
+#portal_menu li:last-child { border-bottom: 1px solid rgba(255, 255, 255, 0.1);}
+#portal_menu li.is-active:after {
+    z-index: 50;
+    display: block;
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -0.03125em;
+    margin-top: -0.625em;
+    border-top: 0.625em transparent solid;
+    border-bottom: 0.625em transparent solid;
+    border-right: 0.625em white solid;
+  }
+#portal_menu li a:focus, #portal_menu li a:hover {height:inherit;}
+/* We apply the background hover color when user hover the mouse over of the li component */
+/* for IE < 9 we using class .iehover */
+#portal_menu ul li:hover, #portal_menu ul li:focus, #portal_menu ul li#current,
+#portal_menu ul li.iehover{ border-top:4px solid #339900; border-bottom:4px solid #339900;   transition: all 0.3s ease-out 0s; height:inherit;}
+#portal_menu ul li#current{ border:none;}
+
+#portal_menu ul li a{color:#FFF; display:block; text-decoration:none; font-size:1em; padding: 0.85714em 2.14286em;}
+
+/**** SECOND LEVEL MENU ****/
+
+#portal_menu ul li ul{ display:none; z-index:2001; position:inherit;}
+#portal_menu ul li:hover ul, #portal_menu ul li:focus ul,
+#portal_menu ul li.iehover ul{display:block; position:inherit; left:0;  top:inherit; height:inherit;}
+
+#portal_menu ul li ul li{ background-color:#cae25a; border-bottom:solid 1px white; font-size:95%; float:left; top:0}
+
+#portal_menu ul li:hover ul li:hover, #portal_menu ul li:focus ul li:focus,
+#portal_menu ul li.iehover ul li.iehover{ background-color:#B3D43B;  border-bottom:solid 1px white;  border-top:none;}
+
+#portal_menu ul li ul li a{ color:#454444; display:block; width:100%;}
+
+/******** topmenu subscribe **********/
+/* We remove the margin, padding, and list style of UL and LI components */
+#subscribe_menu { width:100%; float:left; height: inherit;  background: none; padding-top:2em; }
+
+#subscribe_menu ul, #subscribe_menu ul li{ margin:0; padding:0; list-style:none; float:right;}
+#subscribe_menu ul { width:100%; background:none; }
+#subscribe_menu ul li{ cursor:pointer; float:left; background: none;}
+#subscribe_menu li a{padding: 0.8em 1em 0.5em 1em;}
+#subscribe_menu .btop{ position:fixed; top:-5em;}
+/* for IE < 9 we using class .iehover 
+#subscribel_menu ul li:hover,
+#subscribe_menu ul li.iehover{ position:relative;  border-top:4px solid #999; transition: all 0.3s ease-out 0s; }*/
+
+#subscribel_menu ul li,
+#subscribe_menu ul li.iehover{ position:relative;  border-top:4px solid #999; transition: all 0.3s ease-out 0s; }
+
+/* We apply the link style */
+#subscribe_menu ul li a{ color:#FFF; display:block;  text-decoration:none;font-size:0.8125em; padding:0.85714em 2.6em;}
+
+/**** SECOND LEVEL MENU ****/
+/*user hover the parent li item */
+#subscribe_menu ul li ul{  position: inherit;  display:none; z-index:2001;}
+
+
+/* for IE < 9 we using class .iehover 
+#subscribe_menu ul li:hover ul, */
+#subscribe_menu ul li.iehover ul{display:block; position:inherit;}
+
+
+/* we apply different background color to 2nd level menu items*/
+#subscribe_menu ul li ul li{ background-color:#EBEBEB; width:100%;border-bottom:solid 1px white; font-size:95%; background-image:none;}
+
+/* for IE < 9 we using class .iehover */
+#subscribe_menu ul li:hover ul li:hover,
+#subscribe_menu ul li.iehover ul li.iehover{ background-color:#E1E1E1;}
+
+/* We style the color of level 2 links */
+#subscribe_menu ul li ul li a{ color:#454444; display:inline-block; width:120px;}
+
+#subscribe_menu .color6th { color:#339900; }
+ 
+.js-ready #portal_menu {
+    height: 100%;
+    width: 70%;
+    background: #62A534;
+    -webkit-box-shadow: inset -1.5em 0 1.5em -0.75em rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: inset -1.5em 0 1.5em -0.75em rgba(0, 0, 0, 0.25);
+    box-shadow: inset -1.5em 0 1.5em -0.75em rgba(0, 0, 0, 0.25);
+}
+.js-ready #portal_menu .block { background: transparent;}
+.js-ready #portal_menu .close-btn { display: block;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);opacity: 0.7; display:none; }
+.js-ready #portal_menu .close-btn:focus, .js-ready #portal_menu .close-btn:hover {filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); opacity: 1;}
+.js-ready #portal_menu {left: -74%;}
+.js-ready body {left: 0;}
+.js-nav body { left: 70%; }
+.csstransforms3d.csstransitions.js-ready #portal_menu {
+  left:  -15px;
+  -webkit-transform: translate3d(-100%, 0, 0);
+  -moz-transform: translate3d(-100%, 0, 0);
+  -ms-transform: translate3d(-100%, 0, 0);
+  -o-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.csstransforms3d.csstransitions.js-ready body {
+  left: 0 !important;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform 500ms ease;
+  -moz-transition: -moz-transform 500ms ease;
+  -o-transition: -o-transform 500ms ease;
+  transition: transform 500ms ease;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.csstransforms3d.csstransitions.js-nav body {
+  -webkit-transform: translate3d(70%, 0, 0) scale3d(1, 1, 1);
+  -moz-transform: translate3d(70%, 0, 0) scale3d(1, 1, 1);
+  -ms-transform: translate3d(70%, 0, 0) scale3d(1, 1, 1);
+  -o-transform: translate3d(70%, 0, 0) scale3d(1, 1, 1);
+  transform: translate3d(70%, 0, 0) scale3d(1, 1, 1);
+}
+.csstransforms3d.csstransitions.js-ready #portal_menu .block {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+  -webkit-transition: opacity 300ms 100ms, -webkit-transform 500ms ease;
+  -webkit-transition-delay: ease, 0s;
+  -moz-transition: opacity 300ms 100ms ease, -moz-transform 500ms ease;
+  -o-transition: opacity 300ms 100ms ease, -o-transform 500ms ease;
+  transition: opacity 300ms 100ms ease, transform 500ms ease;
+  -webkit-transform: translate3d(70%, 0, 0) scale3d(0.9, 0.9, 0.9);
+  -moz-transform: translate3d(70%, 0, 0) scale3d(0.9, 0.9, 0.9);
+  -ms-transform: translate3d(70%, 0, 0) scale3d(0.9, 0.9, 0.9);
+  -o-transform: translate3d(70%, 0, 0) scale3d(0.9, 0.9, 0.9);
+  transform: translate3d(70%, 0, 0) scale3d(0.9, 0.9, 0.9);
+  -webkit-transform-origin: 50% 0%;
+  -moz-transform-origin: 50% 0%;
+  -ms-transform-origin: 50% 0%;
+  -o-transform-origin: 50% 0%;
+  transform-origin: 50% 0%;
+} 
+.csstransforms3d.csstransitions.js-nav #portal_menu .block {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.slide-trigger { display: block;  position:relative; } 
+.no-js .slide-trigger { display: none; }
+}

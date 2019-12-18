@@ -1,0 +1,31 @@
+﻿body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:15px; line-height:1.42857143;color:#666;background-color:#fff; letter-spacing:1px;}
+
+.col-lg-1,.col-lg-10,.col-lg-11,.col-lg-12,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-md-1,.col-md-10,.col-md-11,.col-md-12,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-sm-1,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-xs-1,.col-xs-10,.col-xs-11,.col-xs-12,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9{padding-right:0px !important;padding-left:0px !important;}
+
+a,a:visited{text-decoration:none !important;}
+a:focus,a:hover{color:#941B5A !important;text-decoration:none !important;}
+
+.h1,.h2,.h3,h1,h2,h3{margin-top:0px;margin-bottom:0px; }
+.h4,.h5,.h6,h4,h5,h6{margin-top:0px;margin-bottom:0px; line-height:1.2em; }
+.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6{letter-spacing:1px;}
+.h4,h4{font-size:15px;}
+.h5,h5{font-size:14px;}
+
+.navbar-fixed-top{/*top:0;*/ top:inherit; position:inherit\9; background:#fff\9; border-width:0 0 1px;}
+
+.h1 .small,.h1 small,.h2 .small,.h2 small,.h3 .small,.h3 small,.h4 .small,.h4 small,.h5 .small,.h5 small,.h6 .small,.h6 small,h1 .small,h1 small,h2 .small,h2 small,h3 .small,h3 small,h4 .small,h4 small,h5 .small,h5 small,h6 .small,h6 small{font-weight:400;line-height:1;color:#fff !important;}
+
+.carousel-inner { background:#000; }
+
+p { letter-spacing:1.5px;}
+
+/*
+@media only screen and (min-width : 10em) and (max-width: 40em) {
+.h2,h2{font-size:18px;}
+}
+*/
+@media print{
+a[href]:after{content:none!important;}
+abbr[title]:after{content:none!important;}
+a[href^="javascript:"]:after,a[href^="#"]:after{content:none !important;}
+}

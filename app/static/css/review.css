@@ -1,0 +1,92 @@
+﻿.icon-star { color:#dadada; cursor:pointer }
+		.icon-star-active { color: #ff9900 }
+		.circle-icon { 
+			width: 35px;
+			height: 35px;
+			text-align: center;
+			border-radius: 20px;
+			border: 1px solid #fff;
+			vertical-align: middle;
+			line-height: 35px;
+			background: #555;
+			cursor:pointer;
+		}
+		.circle-icon span{ 
+			color:#fff
+		}
+		.icon-list {
+			list-style: none; position:absolute;top:0px;right:5px;z-index: 2
+		}
+		.icon-list li { margin-top:5px; }
+		.circle-icon span.icon-red-filled { color:red}
+		.agency-profile-contents {
+    display: flex;
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    float: left;
+    margin-bottom: 15px;
+    padding: 15px 25px;
+    position: relative;
+    background-color: #fff;
+    box-shadow: 1px 1px 2px #ddd;
+}
+		.agency-profile-contents .service-fee-nationality {
+    font-size: 20px;
+    font-weight: 600;
+    color: #990000;
+    margin-bottom: 5px;
+}
+		.tab-content .column {
+    display: flex;
+    flex-direction: row;
+}
+		.tab-content .text-bold, .tab-content strong {
+    font-weight: 700;
+}
+		
+
+	.agency-profile-contents .service-fee-title-1, .agency-profile-contents .service-fee-title-2, .agency-profile-contents .service-fee-title-3, .agency-profile-contents .service-fee-title-4, .agency-profile-contents .service-fee-col-1, .agency-profile-contents .service-fee-col-2, .agency-profile-contents .service-fee-col-3, .agency-profile-contents .service-fee-col-4 {
+		border-bottom: 1px solid #000;
+		padding: 5px 0 5px 3px;
+	}
+		
+	.bg-gray-lighter {
+		background: #f9f9f9;
+		fill: #f9f9f9;
+	}
+		
+	.agency-profile-contents .service-fee-title-1, .agency-profile-contents .service-fee-col-1 {
+		width: 200px;
+	}
+	.agency-profile-contents .service-fee-title-2, .agency-profile-contents .service-fee-col-2 {
+    	width: 120px;
+	}
+	.agency-profile-contents .service-fee-title-3, .agency-profile-contents .service-fee-col-3 {
+		width: 100px;
+		text-align: center;
+	}
+	.agency-profile-contents .service-fee-title-4, .agency-profile-contents .service-fee-col-4 {
+		width: 80px;
+		text-align: center;
+	}
+
+.agency-profile-contents .fa-info-circle { cursor:pointer}
+
+.tooltip-inner { max-width: 350px }
+
+.icon-liked {
+    color: #3b5998 !important;
+    font-weight: 600;
+}
+
+.review-favourite-no {
+    background-color: #3b5998;
+    color: #fff;
+    font-weight: 600;
+    padding: 1px 8px 4px;
+    border-radius: 5px;
+}

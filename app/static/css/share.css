@@ -1,0 +1,39 @@
+﻿.stLarge {width:35px !important; height:35px !important;}
+.stButton {margin:0 1px 0 0 !important; margin:0 4px 0 0\9 !important; vertical-align:middle;}
+.stButton .stLarge {background-image:url(../images/shareicon.png) !important;}
+
+ 
+.st_facebook_large .stButton .stLarge:hover {background-position:0px 0px !important;}
+.st_googleplus_large .stButton .stLarge {background-position:0px 105px !important;}
+.st_twitter_large .stButton .stLarge {background-position:0px 70px !important;}
+.st_sina_large .stButton .stLarge {background-position:0px 35px !important;}
+.sina_large .stButton .stLarge {background-position:0px 35px !important;}
+
+
+.soc_wrap {}
+.soc_wrap .share_wrap {padding:0 0.5em; border-left:1px solid #999; display:inline-block; height:28px; vertical-align:middle;}
+.soc_wrap .share_wrap .share_txt { display:table-cell; font-family:Arial, Helvetica, sans-serif;font-size:12px; line-height:2.5em;}
+
+.soc_wrap .share_wrap2 {padding:0;  display:inline-block; height:39px; vertical-align:middle;}
+.sharelink_icon { background: url(../images/copylink.png) no-repeat 0px 0px; width:35px; height:35px;}
+a:hover .sharelink_icon { background: url(../images/copylink.png) no-repeat 0px 0px; width:35px; height:35px;}
+
+.Biggerfonts_icon { background: url(../images/sms.gif) no-repeat 0px -78px; width:24px; height:24px;}
+a:hover .Biggerfonts_icon { background: url(../images/sms.gif) no-repeat 0px -102px; width:24px; height:24px;}
+.Smallerfonts_icon { background: url(../images/sms.gif) no-repeat -30px -78px; width:24px; height:24px;}
+a:hover .Smallerfonts_icon { background: url(../images/sms.gif) no-repeat -30px -102px; width:24px; height:24px;}
+.bookmark_icon { background: url(../images/sms.gif) no-repeat -76px -78px; width:24px; height:24px;}
+a:hover .bookmark_icon { background: url(../images/sms.gif) no-repeat -76px -102px; width:24px; height:24px;}
+.email_icon { background: url(../images/sms.gif) no-repeat -142px -78px; width:24px; height:24px;}
+a:hover .email_icon { background: url(../images/sms.gif) no-repeat -142px -102px; width:24px; height:24px;}
+.print_icon { background: url(../images/sms.gif) no-repeat -176px -78px; width:25px; height:24px;}
+a:hover .print_icon { background: url(../images/sms.gif) no-repeat -176px -102px; width:25px; height:24px;}
+.rss_icon { background: url(../images/sms.gif) no-repeat -87px -0px; width:25px; height:24px;}
+a:hover .rss_icon { background: url(../images/sms.gif) no-repeat -87px -23px; width:25px; height:24px;}
+.fb_report_icon { background: url(../images/fb_report.gif) no-repeat 0px 0px; width:42px; height:25px;}
+a:hover .fb_report_icon { background: url(../images/fb_report.gif) no-repeat 0px -25px; width:42px; height:25px;}
+/*
+@media only screen and (min-width : 10em) and (max-width: 40em) {
+	.soc_wrap {margin-bottom:10px;}
+	.soc_wrap .share_wrap .share_txt { display:none; }
+}*/

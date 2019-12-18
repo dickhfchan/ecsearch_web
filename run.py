@@ -2,7 +2,7 @@ import sky
 
 def create_app():
     app = sky.create_app(__name__, 'app', enabled_plugins={
-        'openapi': True,
+        # 'openapi': True,
         'proxy_fix': True,
         # 'cassandra': True,
         'cache': True,

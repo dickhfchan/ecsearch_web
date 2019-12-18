@@ -129,6 +129,10 @@ def create_app(import_name, app_path, enabled_plugins, after_app_created=None, g
         # route
         if enabled_plugins.get('route'):
             route = import_string(f'{app_dot_path}.net', silent=True)
+        # template global variables
+        @app.context_processor
+        def inject_global_variables_to_templates():
+            return dict(setting=setting)
     return app
 
 cache = None # none if not init

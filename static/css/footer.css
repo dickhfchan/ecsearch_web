@@ -87,8 +87,8 @@ footer .col {display: block; float: left; margin:0%;}
 .footer_nav{  padding-bottom: 0; background:none}
 footer .footer_menu{ background:none; margin:0; padding:0; width:100%;}
 .footer_menu h4{ margin:0; padding:0;   border-bottom:1px #FFF solid;  border-top:none; border-left:none;  width:100%; color:#FFF; font-size:1em;}
-.footer_menu h4 span{ margin:0; padding:0; background: url(../images/footer_arrow-square.png) no-repeat right -42px ;}
-.footer_menu h4.hover  span{ background: url(../images/footer_arrow-square.png) no-repeat scroll right right 5px;}
+.footer_menu h4 span{ margin:0; padding:0; background: url(/static/images/footer_arrow-square.png) no-repeat right -42px ;}
+.footer_menu h4.hover  span{ background: url(/static/images/footer_arrow-square.png) no-repeat scroll right right 5px;}
 .footer_menu h4.active  span{background-position: right 18px;}
 .footer_menu .item1{ background:#188073;}
 .footer_menu .item2{ background:#188073;}

@@ -18,7 +18,7 @@ padding-bottom: 0;margin:0 auto; /*margin-top: -100px;margin-bottom: -10px;*/  }
 .slide_carousel .caroufredsel_wrapper{ margin-bottom:0;/* height:9.375em !important;*/}
 
 
-.slide_carousel a.prev,  .slide_carousel a.next{background: url(../images/miscellaneous_sprite.png) -105px -106px no-repeat transparent;width: 22px;height: 41px;display: block;position: absolute;}
+.slide_carousel a.prev,  .slide_carousel a.next{background: url(/static/images/miscellaneous_sprite.png) -105px -106px no-repeat transparent;width: 22px;height: 41px;display: block;position: absolute;}
 
 .slide_carousel a.prev,  .slide_carousel a.next {top: 53px;}
 .slide_carousel .list_carousel a.prev,  .slide_carousel .list_carousel a.next {top: 30px;}
@@ -33,15 +33,15 @@ padding-bottom: 0;margin:0 auto; /*margin-top: -100px;margin-bottom: -10px;*/  }
 .slide_carousel a.prev span,  .slide_carousel a.next span{display: none;}/**/
 
 .slide_carousel div.pagination {text-align: center;height: 15px; margin:0 0 1em 0; }
-.slide_carousel div.pagination a {background: url(../images/miscellaneous_sprite.png) 0 -300px no-repeat transparent;width: 15px;height: 15px;margin: 0 5px 0 0;display: inline-block;}
+.slide_carousel div.pagination a {background: url(/static/images/miscellaneous_sprite.png) 0 -300px no-repeat transparent;width: 15px;height: 15px;margin: 0 5px 0 0;display: inline-block;}
 .slide_carousel div.pagination a.selected {background-position: -25px -300px;cursor: default;}
 .slide_carousel div.pagination a span {display: none;}
 
 
 .slide_carousel figure { position:relative; cursor:pointer; margin:0;}
-.slide_carousel figure .playicon {background: url(../images/miscellaneous_sprite.png) -106px 0px no-repeat transparent; width: 46px;height: 46px;display: block;position: absolute; top:3em; right:0.25em; z-index:999; display:none;}
+.slide_carousel figure .playicon {background: url(/static/images/miscellaneous_sprite.png) -106px 0px no-repeat transparent; width: 46px;height: 46px;display: block;position: absolute; top:3em; right:0.25em; z-index:999; display:none;}
 
-.slide_carousel figure .playicon {background: url(../images/miscellaneous_sprite.png) -106px 0px no-repeat transparent; width: 46px;height: 46px;display: block;position: absolute; top:2.5em; right:5.125em; z-index:999; display:none;}
+.slide_carousel figure .playicon {background: url(/static/images/miscellaneous_sprite.png) -106px 0px no-repeat transparent; width: 46px;height: 46px;display: block;position: absolute; top:2.5em; right:5.125em; z-index:999; display:none;}
 
 /***************************resize image*****************************************************************/
 /* dan */.ImageDiv{overflow:hidden; border:0px; text-align:center; }
@@ -104,7 +104,7 @@ padding-bottom: 0;margin:0 auto; /*margin-top: -100px;margin-bottom: -10px;*/  }
 .boxslide_carousel .caroufredsel_wrapper{ margin-bottom:0;/* height:9.375em !important;*/}
 
 
-.boxslide_carousel a.prev,  .boxslide_carousel a.next{background: url(../images/miscellaneous_sprite.png) -105px -106px no-repeat transparent;width: 22px;height: 41px;display: block;position: absolute;}
+.boxslide_carousel a.prev,  .boxslide_carousel a.next{background: url(/static/images/miscellaneous_sprite.png) -105px -106px no-repeat transparent;width: 22px;height: 41px;display: block;position: absolute;}
 
 .boxslide_carousel a.prev,  .boxslide_carousel a.next {top: 53px;}
 .boxslide_carousel .list_carousel a.prev,  .boxslide_carousel .list_carousel a.next {top: 30px;}
@@ -119,15 +119,15 @@ padding-bottom: 0;margin:0 auto; /*margin-top: -100px;margin-bottom: -10px;*/  }
 .boxslide_carousel a.prev span,  .boxslide_carousel a.next span{display: none;}/**/
 
 .boxslide_carousel div.pagination {text-align: center;height: 15px; margin:0 0 1em 0; }
-.boxslide_carousel div.pagination a {background: url(../images/miscellaneous_sprite.png) 0 -300px no-repeat transparent;width: 15px;height: 15px;margin: 0 5px 0 0;display: inline-block;}
+.boxslide_carousel div.pagination a {background: url(/static/images/miscellaneous_sprite.png) 0 -300px no-repeat transparent;width: 15px;height: 15px;margin: 0 5px 0 0;display: inline-block;}
 .boxslide_carousel div.pagination a.selected {background-position: -25px -300px;cursor: default;}
 .boxslide_carousel div.pagination a span {display: none;}
 
 
 .boxslide_carousel figure { position:relative; cursor:pointer; margin:0;}
-.boxslide_carousel figure .playicon {background: url(../images/miscellaneous_sprite.png) -106px 0px no-repeat transparent; width: 46px;height: 46px;display: block;position: absolute; top:3em; right:0.25em; z-index:999; display:none;}
+.boxslide_carousel figure .playicon {background: url(/static/images/miscellaneous_sprite.png) -106px 0px no-repeat transparent; width: 46px;height: 46px;display: block;position: absolute; top:3em; right:0.25em; z-index:999; display:none;}
 
-.boxslide_carousel figure .playicon {background: url(../images/miscellaneous_sprite.png) -106px 0px no-repeat transparent; width: 46px;height: 46px;display: block;position: absolute; top:2.5em; right:5.125em; z-index:999; display:none;}
+.boxslide_carousel figure .playicon {background: url(/static/images/miscellaneous_sprite.png) -106px 0px no-repeat transparent; width: 46px;height: 46px;display: block;position: absolute; top:2.5em; right:5.125em; z-index:999; display:none;}
 
 /*
 @media only screen and (min-width : 10em) and (max-width: 40em) {

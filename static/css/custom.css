@@ -50,12 +50,12 @@ body {
   border: 0;
 }
 .bk-body {
-  background-image: url("../images/body.jpg");
+  background-image: url("/static/images/body.jpg");
   background-position: center center;
   background-repeat: repeat;
 }
 .bk-body2 {
-  background-image: url("../images/body2.jpg");
+  background-image: url("/static/images/body2.jpg");
   background-position: center center;
   background-repeat: repeat;
 }
@@ -3409,7 +3409,7 @@ blockquote .fa-quote-left {
  * -----------------------------------------------------------------------------
  */
 .page_error {
-  background-image: url("../images/404-replace.png");
+  background-image: url("/static/images/404-replace.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -3503,7 +3503,7 @@ blockquote .fa-quote-left {
  * -----------------------------------------------------------------------------
  */
 .page_comingsoon {
-  background-image: url("../images/1220x658.png");
+  background-image: url("/static/images/1220x658.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;

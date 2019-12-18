@@ -9,9 +9,9 @@
 
 .carousel {margin:0 0 0.75em; background:white;}
 .carousel-control {width:auto; width:auto !important; opacity:1;}
-.carousel-control .glyphicon-chevron-left {background:url(../images/arrow-prev.png) no-repeat; width:40px; height:60px; width:40px\9 !important; height:60px\9 !important; margin-left:0; margin-left:0\9 !important;}
+.carousel-control .glyphicon-chevron-left {background:url(/static/images/arrow-prev.png) no-repeat; width:40px; height:60px; width:40px\9 !important; height:60px\9 !important; margin-left:0; margin-left:0\9 !important;}
 .carousel-control .glyphicon-chevron-left:before { content:''}
-.carousel-control .glyphicon-chevron-right {background:url(../images/arrow-next.png) no-repeat; width:40px; height:60px; width:40px\9 !important; height:60px\9 !important; margin-right:0; margin-right:0\9 !important;}
+.carousel-control .glyphicon-chevron-right {background:url(/static/images/arrow-next.png) no-repeat; width:40px; height:60px; width:40px\9 !important; height:60px\9 !important; margin-right:0; margin-right:0\9 !important;}
 .carousel-control .glyphicon-chevron-right:before { content:''}
 
 .carousel-caption {
@@ -22,7 +22,7 @@ bottom: 0px;
 left:0px; left:0\9 !important;
 padding: 10px 20px 10px 20px; padding: 10px 20px 10px 20px\9 !important;
 background: #000;
-background: url(../images/list_banner_title.png) repeat;
+background: url(/static/images/list_banner_title.png) repeat;
 width: 100%;
 line-height: 1.33;
 color: #fff;

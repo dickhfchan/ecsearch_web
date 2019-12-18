@@ -16,7 +16,7 @@ padding-bottom: 0;margin:0 auto; /*margin-top: -100px;margin-bottom: -10px;*/  }
 .image_carousel .caroufredsel_wrapper{ /*height:175px !important;*/}
 
 
-.image_carousel a.prev,  .image_carousel a.next{background: url(../images/miscellaneous_sprite.png) 0 0 no-repeat transparent;width: 27px;height: 53px;display: block;position: absolute;}
+.image_carousel a.prev,  .image_carousel a.next{background: url(/static/images/miscellaneous_sprite.png) 0 0 no-repeat transparent;width: 27px;height: 53px;display: block;position: absolute;}
 
 .image_carousel a.prev,  .image_carousel a.next {top: 53px;}
 .image_carousel .list_carousel a.prev,  .image_carousel .image_carousel a.next {top: 30px;}
@@ -30,14 +30,14 @@ padding-bottom: 0;margin:0 auto; /*margin-top: -100px;margin-bottom: -10px;*/  }
 .image_carousel a.prev span,  .image_carousel a.next span{display: none;}/**/
 
 .image_carousel div.pagination {text-align: center;height: 15px; margin:0 0 1em 0; }
-.image_carousel div.pagination a {background: url(../images/miscellaneous_sprite.png) 0 -300px no-repeat transparent;width: 15px;height: 15px;margin: 0 5px 0 0;display: inline-block;}
+.image_carousel div.pagination a {background: url(/static/images/miscellaneous_sprite.png) 0 -300px no-repeat transparent;width: 15px;height: 15px;margin: 0 5px 0 0;display: inline-block;}
 .image_carousel div.pagination a.selected {background-position: -25px -300px;cursor: default;}
 .image_carousel div.pagination a span {display: none;}
 
 .image_carousel figure { position:relative; cursor:pointer; margin:0;}
-.image_carousel figure .playicon {background: url(../images/miscellaneous_sprite.png) -106px 0px no-repeat transparent; width: 46px;height: 46px;display: block;position: absolute; top:3em; right:0.25em; z-index:999; }
+.image_carousel figure .playicon {background: url(/static/images/miscellaneous_sprite.png) -106px 0px no-repeat transparent; width: 46px;height: 46px;display: block;position: absolute; top:3em; right:0.25em; z-index:999; }
 
-.image_carousel figure .playicon {background: url(../images/miscellaneous_sprite.png) -106px 0px no-repeat transparent; width: 46px;height: 46px;display: block;position: absolute; top:2.5em; right:5.125em; z-index:999; }
+.image_carousel figure .playicon {background: url(/static/images/miscellaneous_sprite.png) -106px 0px no-repeat transparent; width: 46px;height: 46px;display: block;position: absolute; top:2.5em; right:5.125em; z-index:999; }
 
 
 .album_list{ width:99%; border:1px solid#62A534;

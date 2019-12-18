@@ -10,7 +10,7 @@
 .article_wrap {background:#FFF; padding:15px; border-top:1px #C0C3C4 solid; border-bottom:1px #C0C3C4 solid; margin:0 0.625em 0.75em 0em;}
 .article_wrap2 {background:#FFF; padding:15px; border-top:1px #C0C3C4 solid; border-bottom:1px #C0C3C4 solid; margin:0 0 0.75em 0em;}
 .article_wrap .article_top {}
-.article_related li {   background: url(../images/bullent_sq.gif) no-repeat left 0.5em;  padding-left: 15px; }
+.article_related li {   background: url(/static/images/bullent_sq.gif) no-repeat left 0.5em;  padding-left: 15px; }
 .article_wrap .article_top h3 {/*20150528 font-weight:bold; */}
 .article_wrap .article_content {padding:0.5em 0;}
 .article_wrap .article_content h2 {margin: 0 0 10px;font-size: inherit;font-weight: unset;line-height: inherit;}
@@ -39,7 +39,7 @@
 
 
 .cat_list_wrap1 {background:#FFF; padding:15px; border-bottom:1px #C0C3C4 solid;}
-.cat_list_wrap1 ul li {background: url(../images/bullent_sq.gif) no-repeat left 0.5em; padding-left:15px;}
+.cat_list_wrap1 ul li {background: url(/static/images/bullent_sq.gif) no-repeat left 0.5em; padding-left:15px;}
 
 .cat_list_wrap2 {background:#FFF; margin:0;}
 .cat_list_wrap2 .cell_wrapper {width:100%;}

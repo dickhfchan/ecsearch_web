@@ -1,0 +1,410 @@
+openapi: 3.0.1
+info:
+  title: API
+  # description: ''
+  # termsOfService: http://swagger.io/terms/
+  contact:
+    email: phphe@outlook.com
+  # license:
+  #   name: Apache 2.0
+  #   url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+# externalDocs:
+#   description: Find out more about Swagger
+#   url: http://swagger.io
+servers:
+- url: https://aaprint.co/api
+- url: http://localhost:8072/api
+tags:
+- name: base
+- name: file
+- name: user
+- name: order
+- name: shop
+paths:
+  /client_initial_data:
+    get:
+      tags:
+      - base
+      summary: 客户端启动时需获得的初始数据. Get initial data for client.
+      operationId: app.net.base.client_initial_data
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  config:
+                    type: object
+                    description: Some configs
+  /file_get/app/uploads/{filename}:
+    get:
+      tags:
+      - file
+      summary: 访问文件/下载文件. Get File
+      operationId: app.net.file.file_get
+      parameters:
+      - name: filename
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        404:
+          description: File not found
+          content: {}
+        200:
+          description: File content
+          content:
+            application/file:
+              schema:
+                type: string
+                format: binary
+  /user_current:
+    get:
+      tags:
+      - user
+      summary: 当前用户. Get current user
+      operationId: app.net.user.user_current
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  is_anonymous:
+                    type: boolean
+                    description: Is signed in
+                  ...:
+                    type: string
+  /user_keep_alive:
+    get:
+      x-middlewares: [auth]
+      security:
+      - bearerAuth: []
+      tags:
+      - user
+      summary: 获得新auth token. Get new auth token
+      operationId: app.net.user.user_keep_alive
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
+                    description: JWT auth token, expires in one hour
+  /user_login_for_wechat_mini_program:
+    post:
+      tags:
+      - user
+      summary: 用微信code登录. Login for wechat mini program
+      operationId: app.net.user.user_login_for_wechat_mini_program
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                code:
+                  type: string
+                  description: Get from wx.login
+                name:
+                  type: string
+                avatar:
+                  type: string
+                gender:
+                  type: string
+              required: [code, name, avatar]
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
+                    description: JWT auth token, expires in one hour
+  /user_login_by_wechat_for_pc:
+    post:
+      tags:
+      - user
+      summary: 微信扫码登录. Login for PC by wechat
+      operationId: app.net.pc_user.user_login_by_wechat_for_pc
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                code:
+                  type: string
+                  description: Get from wx.login
+                name:
+                  type: string
+                avatar:
+                  type: string
+                gender:
+                  type: string
+              required: [code, name, avatar]
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
+                    description: JWT auth token, expires in one hour
+  /order_create:
+    post:
+      x-middlewares: [auth]
+      security:
+      - bearerAuth: []
+      tags:
+      - order
+      summary: 创建空订单,上传文件之前. Create empty order before upload file
+      operationId: app.net.order.order_create
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: Order id
+  /order_upload_file:
+    post:
+      x-middlewares: [auth]
+      security:
+      - bearerAuth: []
+      tags:
+      - order
+      summary: 上传文件/创建订单(上传文件即创建订单). Create empty order before upload file
+      operationId: app.net.order.order_upload_file
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                order_id:
+                  type: string
+                file:
+                  type: string
+                  format: binary
+                  description: allowed_types = ['pdf', 'gif', 'jpg', 'jpeg', 'png', 'webp']
+      responses:
+        200:
+          description: Successful operation
+          content: {}
+  /order_file_uploaded:
+    post:
+      x-middlewares: [auth]
+      security:
+      - bearerAuth: []
+      tags:
+      - order
+      summary: 文件上传完成,更新订单状态. Update order after all file uploaded
+      operationId: app.net.order.order_file_uploaded
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                order_id:
+                  type: string
+      responses:
+        200:
+          description: Successful operation
+          content: {}
+  /order_update:
+    post:
+      x-middlewares: [auth]
+      security:
+      - bearerAuth: []
+      tags:
+      - order
+      summary: todo 更新需求/更新订单/更新打印店,打印机. Save requirements, shop, printer of order.
+      operationId: app.net.order.order_update
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                order_id:
+                  type: string
+      responses:
+        200:
+          description: Successful operation
+          content: {}
+  /order_cancel:
+    post:
+      x-middlewares: [auth]
+      security:
+      - bearerAuth: []
+      tags:
+      - order
+      summary: 顾客取消订单. Cancel order by customer.
+      operationId: app.net.order.order_cancel
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                order_id:
+                  type: string
+                reason:
+                  type: string
+              required: [order_id]
+      responses:
+        200:
+          description: Successful operation
+          content: {}
+  /order_start_print:
+    post:
+      x-middlewares: [auth]
+      security:
+      - bearerAuth: []
+      tags:
+      - order
+      summary: 开始打印. Start print.
+      operationId: app.net.order.order_start_print
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                order_id:
+                  type: string
+      responses:
+        200:
+          description: Successful operation
+          content: {}
+  /order_update_print_status_from_pc:
+    post:
+      x-middlewares: [auth, role('merchant')]
+      security:
+      - bearerAuth: []
+      tags:
+      - order
+      summary: 更新打印状态(pc端). Update print status from PC client.
+      operationId: app.net.order.order_update_print_status_from_pc
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                order_id:
+                  type: string
+      responses:
+        200:
+          description: Successful operation
+          content: {}
+  /merchant/shop_save:
+    post:
+      x-middlewares: [auth, role('merchant')]
+      security:
+      - bearerAuth: []
+      tags:
+      - shop
+      summary: 添加/编辑商铺,打印机信息. Save shop and its printer.
+      operationId: app.net.merchant.shop.shop_save
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                ...:
+                  type: string
+      responses:
+        200:
+          description: Successful operation
+          content: {}
+  /merchant/shop_get_qr_code:
+    post:
+      x-middlewares: [auth, role('merchant')]
+      security:
+      - bearerAuth: []
+      tags:
+      - shop
+      summary: 生成二维码. Generate Q code pic.
+      operationId: app.net.merchant.shop.shop_get_qr_code
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                shop_id:
+                  type: string
+                printer_id:
+                  type: string
+      responses:
+        200:
+          description: File content
+          content:
+            application/file:
+              schema:
+                type: string
+                format: binary
+  /merchant/order_approve:
+    post:
+      x-middlewares: [auth, role('merchant')]
+      security:
+      - bearerAuth: []
+      tags:
+      - order
+      summary: 商家审核通过. Approve order by merchant.
+      operationId: app.net.merchant.order.order_approve
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                order_id:
+                  type: string
+      responses:
+        200:
+          description: Successful operation
+          content: {}
+  /merchant/order_reject:
+    post:
+      x-middlewares: [auth, role('merchant')]
+      security:
+      - bearerAuth: []
+      tags:
+      - order
+      summary: 商家审核拒绝通过. Reject order by merchant.
+      operationId: app.net.merchant.order.order_reject
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                order_id:
+                  type: string
+                reason:
+                  type: string
+      responses:
+        200:
+          description: Successful operation
+          content: {}
+components:
+  securitySchemes:
+    bearerAuth:            # arbitrary name for the security scheme
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      x-bearerInfoFunc: app.plugins.jwt_auth.decode_token

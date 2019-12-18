@@ -1,0 +1,32 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+pylint = "*"
+
+[packages]
+faker = "*"
+bcrypt = "*"
+cerberus = "*"
+flask-caching = "*"
+pyjwt = "*"
+pytest = "*"
+ksuid = "*"
+flask-mail = "!=0.9.1"
+flask = "*"
+flask-login = {git = "https://github.com/phphe/flask-login.git"}
+flask-apscheduler = "*"
+pytz = "*"
+stringcase = "*"
+pypdf2 = "*"
+connexion = {extras = ["swagger-ui"],version = "*"}
+tornado = "*"
+flask-talisman = "*"
+flask-sqlalchemy = "*"
+pymysql = "*"
+sockjs-tornado = "*"
+
+[requires]
+python_version = "3.7"

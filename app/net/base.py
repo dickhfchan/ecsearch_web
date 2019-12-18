@@ -1,10 +1,7 @@
 import datetime, re
-from flask import current_app as app, url_for, request, render_template
-from flask_login import current_user
-from app import utils as ut, middlewares, models
+from sky import current_app as app, url_for, request, render_template, current_user, cache, setting
 from app.blueprints import api
-from app.plugins.cache import cache
-
+from app import middlewares, models
 # @api.route('/<path:path>')
 # def api_404(path):
 #     return '', 404
@@ -15,7 +12,7 @@ def client_initial_data():
     # client config
     config = _get_config_for_client()
     initialData['config'] = config
-    return ut.jsonify(initialData)
+    return initialData
 
 def _get_config_for_client():
     config = {}
@@ -49,5 +46,5 @@ def _get_config_for_client():
                     excluded = True
                     break
         if included and not excluded:
-            config[key] = ut.setting(key)
+            config[key] = setting(key)
     return config

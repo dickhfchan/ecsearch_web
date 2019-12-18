@@ -6,13 +6,14 @@ class base:
     # database
     DB_NAME = "ecsearchhk_ecsearch"
     DB_HOST = '127.0.0.1'
+    DB_USER = ''
     DB_PASS = ''
     #
     APP_NAME = 'Ecsearch'
     SECRET_KEY = 'ecsearch^m(ht4oyq6iph&j54mc^w#ag&pafsdnj%v^oyx9l1h0'
     HASH_SALT = '&vwK!9&01h4t_^XKA'
     #
-    SOCKETIO_CORS_ALLOWED_ORIGINS = '*'
+    SOCKET_CORS_ALLOWED_ORIGINS = '*'
     # auth
     SESSION_TIMEOUT = datetime.timedelta(hours=1)
     SESSION_TIMEOUT_LONG = datetime.timedelta(hours=8)
@@ -84,4 +85,4 @@ class production(base):
     pass
 
 class test(development):
-    DB_KEYSPACE = '%s_test'%(development.DB_KEYSPACE)
+    DB_NAME = '%s_test'%(development.DB_NAME)

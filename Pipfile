@@ -22,11 +22,11 @@ pytz = "*"
 stringcase = "*"
 pypdf2 = "*"
 connexion = {extras = ["swagger-ui"],version = "*"}
-tornado = "*"
 flask-talisman = "*"
 flask-sqlalchemy = "*"
 pymysql = "*"
-sockjs-tornado = "*"
+flask-socketio = "*"
+eventlet = "*"
 
 [requires]
 python_version = "3.7"

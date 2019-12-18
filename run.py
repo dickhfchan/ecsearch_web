@@ -4,7 +4,7 @@ def create_app():
     app = sky.create_app(__name__, 'app', enabled_plugins={
         'openapi': True,
         'proxy_fix': True,
-        'cassandra': True,
+        # 'cassandra': True,
         'cache': True,
         'schedule_task': True,
         'flask_login': True,
@@ -29,18 +29,9 @@ if __name__ == '__main__':
             app.openapi_app.add_api('api.yaml', base_path=blueprints.api.url_prefix, options=options)
 
         # one_api
-        if not enabled_plugins.get('cassandra'):
-            raise Exception('one_api only support cassandra now')
-        from sky.plugins import one_api
-        one_api.register(blueprints.api)
+        # if not enabled_plugins.get('cassandra'):
+        #     raise Exception('one_api only support cassandra now')
+        # from sky.plugins import one_api
+        # one_api.register(blueprints.api)
 
-        # app.run(host=app.config['HOST'],port=app.config['PORT'], debug=app.config['DEBUG'])
-
-        from tornado.wsgi import WSGIContainer
-        from tornado.httpserver import HTTPServer
-        from tornado.ioloop import IOLoop
-
-        # xheaders=True is for Running behind a load balancer: http://www.tornadoweb.org/en/stable/guide/running.html#running-behind-a-load-balancer
-        http_server = HTTPServer(WSGIContainer(app),xheaders=True)
-        http_server.listen(app.config['PORT'], address=app.config['HOST'])
-        IOLoop.instance().start()
+        sky.socketio.run(app, host=app.config['HOST'],port=app.config['PORT'], debug=app.config['DEBUG'])

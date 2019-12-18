@@ -3,7 +3,7 @@ from werkzeug.utils import import_string
 from werkzeug.local import LocalProxy
 from werkzeug import cached_property
 from flask import Flask, g, current_app, abort, Response, render_template, url_for, request, Blueprint
-from flask_login import current_user, login_user, logout_user
+from flask_login import current_user, login_user, logout_user, UserMixin
 from .utils import str_rand, md5, sha1, sha512, salt_hash, hash_pwd, pwd_hashed_compare, map_dicts
 from .utils import make_decorator_with_arguments
 from .utils import override_classmethod, add_classmethod, override_instance_method, add_instance_method
@@ -248,6 +248,40 @@ fake = LocalProxy(_get_fake)
 def send_mail(*args, **kwargs):
     from .plugins.mail import mail
     return mail.send_message(*args, **kwargs)
+
+@functools.lru_cache()
+def _get_socketio():
+    from flask_socketio import SocketIO
+    return SocketIO(current_app, cors_allowed_origins=current_app.config['SOCKET_CORS_ALLOWED_ORIGINS'])
+socketio = LocalProxy(_get_socketio)
+
+def run_app_with_tornado(app):
+    if app.config['DEBUG']:
+        app.logger.debug("Tornado don't support Flask debug, so app.run used.")
+        app.run(host=app.config['HOST'],port=app.config['PORT'], debug=app.config['DEBUG'])
+    else:
+        from tornado.wsgi import WSGIContainer
+        from tornado.httpserver import HTTPServer
+        from tornado.ioloop import IOLoop, PeriodicCallback
+        import signal
+
+        is_closing = False
+        def signal_handler(signum, frame):
+            app.logger.debug('exiting...')
+            global is_closing
+            is_closing = True
+        def check_exit():
+            if is_closing:
+                # clean up here
+                IOLoop.instance().stop()
+                app.logger.debug('exit success')
+        app.logger.debug(f"Address: http://{app.config['HOST']}:{app.config['PORT']}")
+        signal.signal(signal.SIGINT, signal_handler)
+        # xheaders=True is for Running behind a load balancer: http://www.tornadoweb.org/en/stable/guide/running.html#running-behind-a-load-balancer
+        http_server = HTTPServer(WSGIContainer(app), xheaders=True)
+        http_server.listen(app.config['PORT'], address=app.config['HOST'], debug=True)
+        PeriodicCallback(check_exit, 500).start()
+        IOLoop.instance().start()
 
 from .plugins.improved_json_encoder import json_dumps
 from .plugins.data_validation import validate, BaseDataValidator
